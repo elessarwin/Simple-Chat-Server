@@ -7,3 +7,4 @@ message ChatMessage{
     string UserId = 1 ;
     string Message = 2 ;
 }
+//simple message
