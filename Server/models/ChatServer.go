@@ -1,6 +1,7 @@
 package models
 
 import (
+	"fmt"
 	chat "github.com/elessarwin/Simple-Chat-Server/service/proto"
 	"sync"
 )
@@ -44,7 +45,7 @@ func (c *ChatServer) start() {
 
 func (c *ChatServer) Chat(stream chat.ChatServer_ChatServer) error {
 	conn := NewConnection(stream)
-
+	fmt.Println("New Connection.")
 	c.connLock.Lock()
 	c.connections = append(c.connections, conn)
 	c.connLock.Unlock()
